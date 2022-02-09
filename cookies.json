@@ -1,0 +1,11 @@
+{
+  "googleAuth":"AIzaSyAJtKs3y2Sn9B24VG-psh5GI-QNrf6Em8I",
+  "cookies":{
+      "s_v_web_id": "verify_18a259c6b838da74fc70cdf9daa34b67",
+      "tt_webid": "029baafd1299e1fe2f6c6b7b9f6ff04ec5019df"
+  },
+  "xls_input":"数据抓取测试文档.xlsx",
+  "xls_output":"test1.xls",
+  "try_count":3,
+  "time_out":10
+}
