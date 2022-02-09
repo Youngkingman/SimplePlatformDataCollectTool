@@ -4,7 +4,7 @@ from process import xlsProcess
 # Please Read ReadMe.md
 
 #环境配置文件位置
-filepath='cookies.json'
+filepath='config.json'
 
 def read_json_from_file(filepath):
     with open(filepath, 'r', encoding='utf-8') as json_file:
