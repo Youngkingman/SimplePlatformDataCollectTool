@@ -1,5 +1,5 @@
 import json
-from process import xlsProcess
+from XlsProcess import XlsProcess
 
 # Please Read ReadMe.md
 
@@ -15,5 +15,5 @@ def read_json_from_file(filepath):
 
 if __name__ == '__main__':
     data = read_json_from_file(filepath)
-    Process = xlsProcess(data['cookies'], data['googleAuth'], data['xls_input'], data['xls_output'], data['try_count'], data['time_out'])
+    Process = XlsProcess(data['cookies'], data['googleAuth'], data['xls_input'], data['xls_output'], data['try_count'], data['time_out'])
     Process.xlsWriteProcess()

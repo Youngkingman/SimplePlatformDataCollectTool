@@ -59,7 +59,7 @@ class PlatFormAPI(object):
         return int(LikeCount), int(PlayCount)
 
     # 获取重定向的url
-    def get_redirect_url(self, url):
+    def getRedirectUrl(self, url):
         try_count = 1
         while try_count < self.try_count:
             if try_count > 1:
@@ -75,7 +75,7 @@ class PlatFormAPI(object):
         return -1, url
 
     #处理tiktok链接的VideoId提取
-    def get_titok_videoId(self,url):
+    def getTiktokVideoId(self,url):
         videoId = self.titok_video_pattern.findall(url)
         if videoId:
             return videoId[0]
@@ -90,7 +90,7 @@ class PlatFormAPI(object):
         return ""
 
     # 从url解析视频数据，返回平台类型和视频ID
-    def UrlToPlatformAndVedioId(self, url):
+    def urlToPlatformAndVedioId(self, url):
         PlatForm = "SBpython"
         VideoId  = "SBpython"
         if url == "":
@@ -116,7 +116,7 @@ class PlatFormAPI(object):
         # 根据平台截取重定向后的链接ID
         if PlatForm == 'youtube':
             try:
-                code, redirect_url = self.get_redirect_url(url)
+                code, redirect_url = self.getRedirectUrl(url)
                 if code == -1:
                     return -2, PlatForm, VideoId, url
                 result = urlparse(redirect_url)
@@ -126,7 +126,7 @@ class PlatFormAPI(object):
                 return -4, PlatForm, VideoId, redirect_url
         if PlatForm == 'tiktok':
             try:
-                VideoId = self.get_titok_videoId(url)
+                VideoId = self.getTiktokVideoId(url)
                 if VideoId == "":
                     return -4, PlatForm, VideoId, redirect_url
             except:

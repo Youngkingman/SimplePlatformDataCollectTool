@@ -4,7 +4,7 @@ import xlwt
 from xlutils.copy import copy
 from PlatFormAPI import PlatFormAPI
 
-class xlsProcess(object):
+class XlsProcess(object):
     def __init__(self, cookies, googleAuth, xls_input, xls_output, try_count, time_out):
         # 类字段初始化
         self.cookies = cookies
@@ -24,7 +24,7 @@ class xlsProcess(object):
         while i < sheet.nrows:
             url = sheet.row(i)[0].value
             print("------------正在解析第", i + 1, "行的数据-----------------")
-            code, platform, VideoId, redirect_url = self.api.UrlToPlatformAndVedioId(url)
+            code, platform, VideoId, redirect_url = self.api.urlToPlatformAndVedioId(url)
             if code < 0:
                 if code == -1:
                     print("解析失败, 配置为空, 请检查")
